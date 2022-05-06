@@ -33,3 +33,9 @@ You can also make sure your configuration is syntactically valid
 ```
 terraform validate
 ```
+
+to destroy/pull do a terraformed instance!
+
+```
+terraform apply -destroy
+```
