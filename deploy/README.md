@@ -2,6 +2,11 @@
 
 Runs a local docker instance with nginx enabled
 
+## Pre-requisites
+The Terraform CLI (0.14.9+) installed.
+The AWS CLI installed.
+AWS account and associated credentials that allow you to create resources.
+
 ## Commands
 
 run these in order

@@ -9,6 +9,7 @@ This will include:
 4. DB??
 
 ## AWS Terraform
+follow this (link)[https://blog.gruntwork.io/a-comprehensive-guide-to-authenticating-to-aws-on-the-command-line-63656a686799]on how to setup AWS cli
 
 ## AWS EC2 and .Net
 
