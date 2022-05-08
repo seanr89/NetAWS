@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0069d66985b09d219"
+  ami           = "ami-00c90dbdc12232b58"
   instance_type = "t2.micro"
   key_name = "MacECKey"
 

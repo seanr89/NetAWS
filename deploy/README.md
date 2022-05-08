@@ -7,6 +7,10 @@ The Terraform CLI (0.14.9+) installed.
 The AWS CLI installed.
 AWS account and associated credentials that allow you to create resources.
 
+### AWS
+
+### Docker
+
 ## Commands
 
 run these in order
