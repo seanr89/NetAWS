@@ -29,3 +29,5 @@ if [ "whereis node | grep ' ' -ic" == 1]; then
 
         node -e "console.log('Running Node.js ' + process.version)"
 fi
+
+echo "Node Completed"
