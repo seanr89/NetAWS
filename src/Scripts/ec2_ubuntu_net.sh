@@ -16,23 +16,7 @@ fi
 echo "Updating Local Packages"
 sudo apt update
 
-## Node Checks and Install
-if [ "whereis node | grep ' ' -ic" == 1]; then
-        echo "node is installed, skipping..."
-    else
-        echo "download node"
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-        # #Active NVM
-        echo "installing nvm"
-        . ~/.nvm/nvm.sh
-
-        echo "installing node"
-        # nvm install node
-        nvm install 16.15.0
-
-        node -e "console.log('Running Node.js ' + process.version)"
-fi
+sh setup_node.sh
 
 # # Postgres
 if [ "whereis psql | grep ' ' -ic" == 1 ]; then
@@ -41,6 +25,8 @@ if [ "whereis psql | grep ' ' -ic" == 1 ]; then
         echo "installing psql..."
         sudo apt install postgresql postgresql-contrib
 fi
+
+## SFTP
 
 
 
