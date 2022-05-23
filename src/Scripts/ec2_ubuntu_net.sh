@@ -3,8 +3,7 @@
 # Error handling
 set -e
 
-echo "Script Started"	# This is a comment, too!
-
+echo "Script Started - Functioning on EC2 Instance!"	# This is a comment, too!
 
 if [ "$EUID" -ne 0 ]
     then echo "Please run as root"
@@ -12,27 +11,23 @@ if [ "$EUID" -ne 0 ]
 fi
 
 ## First refresh local server package index
-echo "Updating Local Packages"
+echo "Check and Update Local Packages"
 sudo apt update
 
-#sudo passwd ubuntu
+# ubuntu user password change is required later
+sudo passwd ubuntu
 
-#sh setup_node.sh
+# run the basic node setup!
+sh setup_node.sh
 
-# # Postgres
-#sh setup_psql.sh mypass
-# if [ "whereis psql | grep ' ' -ic" == 1 ]; then
-#         echo "psql is installed, skipping..."
-#     else
-#         echo "installing psql..."
-#         sudo apt install postgresql postgresql-contrib
-# fi
+# Postgres default
+sh setup_psql.sh mypass
 
 # SFTP
-echo "SFTP work"
+echo "SFTP Installation"
 sh setup_sftp.sh seanr pass123 sftp
 
-echo "Job Complete"
+echo "Process Job Complete"
 
 
 

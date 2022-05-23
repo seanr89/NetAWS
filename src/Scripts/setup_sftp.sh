@@ -33,5 +33,4 @@ yes $password | sudo passwd $username
 mkdir $folder
 chmod 700 $folder
 
-
 echo "SFTP Complete"

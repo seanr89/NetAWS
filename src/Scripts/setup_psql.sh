@@ -29,7 +29,19 @@ if [ "whereis psql | grep ' ' -ic" == 1 ]; then
 
         sudo -i -u postgres
 
-        exit
+        #access psql console
+        psql
+
+        # support password alteration
+        ALTER USER postgres PASSSWORD 'rwdAdmin22'
+
+        #TODO: do we need a DB create script as well?
+
+        # Escape psql console
+        \q
+
+        # need to exit out of postgres user!
+        sudo -i -u ubuntu
         exit
 fi
 
