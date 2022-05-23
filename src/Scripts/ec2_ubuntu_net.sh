@@ -2,7 +2,6 @@
 
 # Error handling
 set -e
-set -o pipefail
 
 echo "Script Started"	# This is a comment, too!
 
@@ -16,17 +15,24 @@ fi
 echo "Updating Local Packages"
 sudo apt update
 
-sh setup_node.sh
+#sudo passwd ubuntu
+
+#sh setup_node.sh
 
 # # Postgres
-if [ "whereis psql | grep ' ' -ic" == 1 ]; then
-        echo "psql is installed, skipping..."
-    else
-        echo "installing psql..."
-        sudo apt install postgresql postgresql-contrib
-fi
+#sh setup_psql.sh mypass
+# if [ "whereis psql | grep ' ' -ic" == 1 ]; then
+#         echo "psql is installed, skipping..."
+#     else
+#         echo "installing psql..."
+#         sudo apt install postgresql postgresql-contrib
+# fi
 
-## SFTP
+# SFTP
+echo "SFTP work"
+sh setup_sftp.sh seanr pass123 sftp
+
+echo "Job Complete"
 
 
 

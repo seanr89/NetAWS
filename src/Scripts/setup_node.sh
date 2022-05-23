@@ -2,7 +2,6 @@
 
 # Error handling
 set -e
-set -o pipefail
 
 echo "Node Script Started"	# This is a comment, too!
 
