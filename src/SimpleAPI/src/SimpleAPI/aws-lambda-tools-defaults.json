@@ -8,7 +8,7 @@
   "profile": "",
   "region": "",
   "configuration": "Release",
-  "s3-prefix": "SAWSAPI/",
+  "s3-prefix": "SimpleAPI/",
   "template": "serverless.template",
   "template-parameters": ""
 }
