@@ -2,10 +2,8 @@
 
 # Error handling
 set -e
-set -o pipefail
 
-echo "Script Started"	# This is a comment, too!
-
+echo "Script Started - Functioning on EC2 Instance!"	# This is a comment, too!
 
 if [ "$EUID" -ne 0 ]
     then echo "Please run as root"
@@ -13,34 +11,23 @@ if [ "$EUID" -ne 0 ]
 fi
 
 ## First refresh local server package index
-echo "Updating Local Packages"
+echo "Check and Update Local Packages"
 sudo apt update
 
-## Node Checks and Install
-if [ "whereis node | grep ' ' -ic" == 1]; then
-        echo "node is installed, skipping..."
-    else
-        echo "download node"
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+# ubuntu user password change is required later
+sudo passwd ubuntu
 
-        # #Active NVM
-        echo "installing nvm"
-        . ~/.nvm/nvm.sh
+# run the basic node setup!
+sh setup_node.sh
 
-        echo "installing node"
-        # nvm install node
-        nvm install 16.15.0
+# Postgres default
+sh setup_psql.sh mypass
 
-        node -e "console.log('Running Node.js ' + process.version)"
-fi
+# SFTP
+echo "SFTP Installation"
+sh setup_sftp.sh seanr pass123 sftp
 
-# # Postgres
-if [ "whereis psql | grep ' ' -ic" == 1 ]; then
-        echo "psql is installed, skipping..."
-    else
-        echo "installing psql..."
-        sudo apt install postgresql postgresql-contrib
-fi
+echo "Process Job Complete"
 
 
 
