@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace SimpleAPI.Controllers;
+namespace MinimalLambda.Controllers;
 
 [ApiController]
 [Route("[controller]")]

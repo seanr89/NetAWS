@@ -46,6 +46,6 @@ If already installed check if new version is available.
 
 Deploy application
 ```
-    cd "SimpleAPI/src/SimpleAPI"
-    dotnet lambda deploy-function
+    cd "MinimalLambda/src/MinimalLambda"
+    dotnet lambda deploy-serverless
 ```
