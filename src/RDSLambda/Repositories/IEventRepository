@@ -1,0 +1,13 @@
+
+namespace RDSLambda.Repositories;
+
+public interface IEventRepository
+{
+    Task<bool> CreateAsync(Event customer);
+
+    Task<Event> GetAsync(Guid id);
+
+    Task<bool> UpdateAsync(Event customer);
+
+    Task<bool> DeleteAsync(Guid id);
+}

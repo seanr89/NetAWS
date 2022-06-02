@@ -46,12 +46,6 @@ If already installed check if new version is available.
 
 Deploy application
 ```
-    cd "MinimalLambda/src/MinimalLambda"
+    cd "RDSLambda/src/RDSLambda"
     dotnet lambda deploy-serverless
-```
-
-Deploy application
-```
-    cd "MinimalLambda/src/MinimalLambda"
-    dotnet lambda deploy-function
 ```
