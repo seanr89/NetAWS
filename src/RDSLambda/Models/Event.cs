@@ -3,6 +3,10 @@ namespace RDSLambda.Models;
 public class Event
 {
     public Guid Id { get; init; } = new Guid();
+    /// <summary>
+    /// The name of an event
+    /// </summary>
+    /// <value></value>
     public string Name { get; set; }
     public DateTime Date { get; set; }
     /// <summary>
@@ -21,20 +25,8 @@ public class Event
     /// <value></value>
     public bool Private { get; set; }
     /// <summary>
-    /// Basic information to control different types of events
-    /// </summary>
-    /// <value></value>
-    public EventType Type { get; set; }
-    /// <summary>
     /// Name/Email of the person who created the event!
     /// </summary>
     /// <value></value>
     public string Creator { get; set; }
-
-
-    // public CustomerId Id { get; init; } = CustomerId.From(Guid.NewGuid());
-    // public Username Username { get; init; } = default!;
-    // public FullName FullName { get; init; } = default!;
-    // public EmailAddress Email { get; init; } = default!;
-    // public DateOfBirth DateOfBirth { get; init; } = default!;
 }

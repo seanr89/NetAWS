@@ -1,4 +1,6 @@
 
+using RDSLambda.Models;
+
 namespace RDSLambda.Repositories;
 
 public interface IEventRepository
